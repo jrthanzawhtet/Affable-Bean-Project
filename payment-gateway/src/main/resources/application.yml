@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/affabble_bootcamp6
+    username: root
+    password: kyaw549235
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 9000

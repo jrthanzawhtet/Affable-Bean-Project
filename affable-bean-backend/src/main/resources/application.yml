@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: kyaw549235
+    url: jdbc:mysql://localhost:3306/affabble_bootcamp6
+  application:
+    name: affable-bean-backend
+  jpa:
+    hibernate:
+      ddl-auto: update

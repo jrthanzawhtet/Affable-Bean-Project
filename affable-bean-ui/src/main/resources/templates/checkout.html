@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body class="bg-warning">
+<main role="main">
+    <div class="container my-5">
+        <h3>checkout</h3>
+        <p class="lead">In order to purchase the items in your shopping cart,
+        please provide us following information.</p>
+        <div class="row">
+            <div class="col">
+                <div class="card bg-warning">
+                    <div class="card-header">
+                        <h3>UserInfo</h3>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/ui/checkout/form}" th:object="${userInfo}" method="post">
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" th:field="*{name}" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" th:field="*{email}" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone</label>
+                                <input type="text" th:field="*{phone}" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Address</label>
+                                <input type="text" th:field="*{address}" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">CardNumber</label>
+                                <input type="text" th:field="*{creditCardNumber}" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Location</label>
+                                <select th:field="*{location}" class="form-control">
+                                    <option th:each="loc : ${T(com.example.affablebeanui.data.Location).values()}" th:value="${loc}" th:text="${loc}"></option>
+                                </select>
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="Save Info">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

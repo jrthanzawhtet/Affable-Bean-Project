@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+  <div id="product" class="container mt-3">
+    <div class="row">
+      <div class="col-md-4 p-5 mt-3 text-center">
+        <h3 class="bg-button text-white"><a th:href="@{/ui/products?id=3}">Bakery</a></h3>
+        <h3 class="bg-button text-white"><a th:href="@{/ui/products?id=2}">Meats</a></h3>
+        <h3 class="bg-button text-white"><a th:href="@{/ui/products?id=1}">Diary</a></h3>
+        <h3 class="bg-button text-white"><a th:href="@{/ui/products?id=4}">Fruit&#38;Veg</a></h3>
+      </div>
+      <div class="col-md-8">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Product</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="pro : ${products}">
+            <td>
+              <img  th:src="@{'/images/products/'+${pro.name}+'.png'}" alt="">
+            </td>
+            <td th:text="${pro.name}"></td>
+            <td th:text="${'$'+ pro.price}"></td>
+            <td><a th:href="@{'/ui/add-cart?id='+${pro.id}}" class="btn btn-success text-white">Add</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

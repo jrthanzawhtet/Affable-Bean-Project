@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+    <div class="container mt-5">
+        <div class="p-3 bg-warning">
+            <p class="lead">Your order has been successfully processed and
+            will be delivered with 24 hours.</p>
+            <p>Please keep your order id : <span th:text="${orderId}"></span></p>
+        </div>
+    </div>
+</main>
+</body>
+</html>
